@@ -1,9 +1,65 @@
-/* Start page */
-    /* css on button */
-        /* add hover on it */
-        /* slight radial blue color lighter blue inside */
+:root {
+    --blue: rgb(34, 34, 228);
+    --yellow: blanchedalmond;
+}
 
-/* on question page */
-    /* buttons same color */
-    /* everything fades in */
-    /* different colors for write and wrong answers */
+body{
+    background-color: rgb(31, 30, 30);
+}
+
+h1{
+    font-size: 100px;
+    color: var(--blue);
+    /* creating that space (delete once animation is insert) */
+    margin-bottom: 8rem;
+}
+
+h2{
+    font-style: italic;
+    font-size: 40px;
+    color:var(--yellow);
+}
+
+/* layout for start screen */
+.container {
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80vw;
+    margin: 0 auto;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* .hidden{
+    display: none
+} */
+
+/* Format for buttons */
+.btn{
+    font-size: 26px;
+    color:var(--yellow);
+    padding: 25px 10px 25px;
+    margin: 20px;
+    border-radius: 10px;
+    background-image: radial-gradient(var(--blue), rgba(0, 0, 0, 0.765));
+}
+
+.btn:hover{
+    cursor: pointer;
+    transition: 300ms;
+    transform: scale(1.35);
+    border-color: var(--yellow);
+    background-color: var(--blue);
+}
+
+
+

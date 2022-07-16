@@ -34,14 +34,27 @@
 //     <h1>Personal Leaderboard</h1>
 
 
+
+
 //__________CSS_____________
+
+/* Start page */
+    /* css on button */
+        /* add hover on it */
+        /* slight radial blue color lighter blue inside */
+
+/* on question page */
+    /* buttons same color */
+    /* everything fades in */
+    /* different colors for write and wrong answers */
+
 
 
 //__________JS_____________
 //WHEN I click the start button
 //THEN a timer starts and I am presented with a question
 
-    //1. make a button in html
+    //1. make a button in html (start button will be link to /game.html)
     //2. create a timer
         //a. make a timer section in html
         // b. make a timer function in javascript
@@ -130,3 +143,17 @@
     // local storage to save initials 
     // allow others to see previous scores
     // clear personal leaderboard
+
+
+
+//make mobile responsive
+//in the spacing on start page replace margin with an animation of someone typing
+//favicon is something related to js
+//(highscore button will be link to ./highscore.html)
+
+
+//if i want to disable the btn
+// .btn[disabled]:hover {
+//     cursor:not-allowed;
+//     transform: none;
+// }

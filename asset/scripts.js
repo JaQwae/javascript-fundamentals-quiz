@@ -1,6 +1,7 @@
+// questions bank
 var arrayOfQuestions = [
     {
-        questions: 'Booleans have the following outputs',
+        questions: 'Which of the follow output pairs corresponds with booleans?',
 
         answers: {
             a: 'Yes/No',
@@ -12,5 +13,5 @@ var arrayOfQuestions = [
         correctAnswer: 'b'
     }
 
-    
+
 ]
