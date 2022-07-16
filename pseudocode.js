@@ -54,6 +54,7 @@
 //  make buttons for each answer choice or make the answer choice itself a button 
     // assign the click event listening into here
 //  hide the previous question or make the question container change text or remove the container element and append a new element
+// displaying correct at the bottom using js and css?
 
 
 
@@ -95,3 +96,4 @@
 
     // local storage to save initials 
     // allow others to see previous scores
+    // clear personal leaderboard
