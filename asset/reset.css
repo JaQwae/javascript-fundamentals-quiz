@@ -1,3 +1,9 @@
 /* make timer always display */
-/* set font family */
-/* padding and margin indicate that this os for buttons tho */
+
+* {
+    font-family: 'Courier New', 'monospace', 'Arial';
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
