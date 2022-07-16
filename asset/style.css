@@ -1,3 +1,4 @@
+/* ___________Global variables___________ */
 :root {
     --blue: rgb(34, 34, 228);
     --yellow: blanchedalmond;
@@ -7,6 +8,8 @@ body{
     background-color: rgb(31, 30, 30);
 }
 
+
+/* ___________Home Page Styling___________ */
 h1{
     font-size: 100px;
     color: var(--blue);
@@ -20,7 +23,7 @@ h2{
     color:var(--yellow);
 }
 
-/* layout for start screen */
+/* layout for start screen (use also on game page, consider moving to another section)*/
 .container {
     width: 100vw;
     height: 100vw;
@@ -31,6 +34,7 @@ h2{
     margin: 0 auto;
 }
 
+/* layout for start screen (use also on game page, consider moving to another section)*/
 .quiz-layout {
     display: flex;
     flex-direction: column;
@@ -57,14 +61,48 @@ h2{
     cursor: pointer;
     transition: 300ms;
     transform: scale(1.35);
-    border-color: var(--yellow);
     background-color: var(--blue);
 }
 
-#game {
+
+
+
+/* ___________Game Page Styling___________ */
+
+/* format of page*/
+.choice-container {
     display: flex;
-    flex-direction: column;
+    background-color: var(--blue);
+    margin-bottom: 60px;
+    padding: 20px;
+    font-size: 25px;
 }
 
+/* effect when hoovering over the choices */
+.choice-container:hover {
+    cursor: pointer;
+    transition: 300ms;
+    transform: scale(1.05);
+    color: var(--blue);
+    background-color: var(--yellow);
+}
 
+/* Spacing around the letter choice for the answer */
+.choice-letter{
+    padding: 0px 30px;
+}
+
+/* Control how the question is displayed */
+#displayed-question{
+    padding: 60px 0px;
+    font-size: 35px;
+}
+
+/* ___________Multi page styles___________ */
+
+
+/* default text color */
+body {
+    color: var(--yellow);
+}
 
