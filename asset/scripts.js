@@ -17,4 +17,4 @@ var arrayOfQuestions = [
 
 
 ]
-// declaring variable for start button
+

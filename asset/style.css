@@ -31,13 +31,12 @@ h2{
     margin: 0 auto;
 }
 
-.flex-column {
+.quiz-layout {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-
 
 /* .hidden{
     display: none
@@ -60,6 +59,11 @@ h2{
     transform: scale(1.35);
     border-color: var(--yellow);
     background-color: var(--blue);
+}
+
+#game {
+    display: flex;
+    flex-direction: column;
 }
 
 

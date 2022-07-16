@@ -38,11 +38,6 @@
 
 //__________CSS_____________
 
-/* Start page */
-    /* css on button */
-        /* add hover on it */
-        /* slight radial blue color lighter blue inside */
-
 /* on question page */
     /* buttons same color */
     /* everything fades in */
