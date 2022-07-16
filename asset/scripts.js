@@ -1,3 +1,5 @@
+// __________Global Variables__________
+
 // questions bank
 var arrayOfQuestions = [
     {
@@ -15,3 +17,4 @@ var arrayOfQuestions = [
 
 
 ]
+// declaring variable for start button

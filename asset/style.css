@@ -51,6 +51,7 @@ h2{
     margin: 20px;
     border-radius: 10px;
     background-image: radial-gradient(var(--blue), rgba(0, 0, 0, 0.765));
+    text-decoration: none;
 }
 
 .btn:hover{
