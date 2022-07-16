@@ -1,23 +1,3 @@
-//__________HMTL_____________(take one )
-// <!-- Start Page -->
-//     <h1>Javascript Quiz</h1>
-//     <h2>So you think that you know Javascript huh? Put knowledge to the test?</h2>
-//     <button id = start-btn type="button">Click to Begin!</button>
-
-
-
-//     <!-- Question Template-->
-//     <main>
-//     <h1 class="question-placeholder"></h1>
-//     <ul>
-//         <li id = 'answer-choice-placeholder 1'></li>
-//         <li id = 'answer-choice-placeholder 2'></li>
-//         <li id = 'answer-choice-placeholder 3'></li>
-//         <li id = 'answer-choice-placeholder 4'></li>
-//     </ul>
-//     </main>
-
-
 
 //     <!-- Saving score Form -->
 //     <h1>Congrats on completing the quiz!</h1>
@@ -32,16 +12,6 @@
 
 //     <!-- Displaying Previous High Scores (may add) -->
 //     <h1>Personal Leaderboard</h1>
-
-
-
-
-//__________CSS_____________
-
-/* on question page */
-    /* buttons same color */
-    /* everything fades in */
-    /* different colors for write and wrong answers */
 
 
 
@@ -145,6 +115,7 @@
 //in the spacing on start page replace margin with an animation of someone typing
 //favicon is something related to js
 //(highscore button will be link to ./highscore.html)
+// different color flash for right and wrong answers
 
 
 //if i want to disable the btn
