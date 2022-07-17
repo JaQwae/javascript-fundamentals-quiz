@@ -146,8 +146,14 @@ timer()
 
 //___cycles through questions___
 
-var questionPlaceholder= document.getElementById('displayed-question')
-var answerChoicePlaceholder = document.getElementsByClassName('choice-text')
+var questionPlaceholder= document.getElementById('displayed-question');
+var answerChoiceA = document.getElementById('choice-text-A');
+var answerChoiceB = document.getElementById('choice-text-B');
+var answerChoiceC = document.getElementById('choice-text-C');
+var answerChoiceD = document.getElementById('choice-text-D');
+
+
+
 
 function displayQuestions() {
 //1.create a for loop
@@ -155,7 +161,10 @@ for (let i = 0; i < arrayOfQuestions.length; i++) {
     //question displayed
     var question = questionPlaceholder.textContent = arrayOfQuestions[i].question;
     //answers choice displayed
-    var answer = answerChoicePlaceholder.textContent = arrayOfQuestions[i].answer;
+    var answerChoice1 = answerChoiceA.textContent = arrayOfQuestions[i].answer[0];
+    var answerChoice2 = answerChoiceB.textContent = arrayOfQuestions[i].answer[1];
+    var answerChoice3 = answerChoiceC.textContent = arrayOfQuestions[i].answer[2];
+    var answerChoice4 = answerChoiceD.textContent = arrayOfQuestions[i].answer[3];
     // construct a while loop checking for correct answer
     //if answer is incorrect subtract points
     while (answer[i] != correctAnswer[i]) {
