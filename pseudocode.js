@@ -19,10 +19,7 @@
 //WHEN I click the start button
 //THEN a timer starts and I am presented with a question
 
-    //1. make a button in html (start button will be link to /game.html)
-    //2. create a timer
-        //a. make a timer section in html
-        // b. make a timer function in javascript
+
     //3. make an event listener - put it on the button/connect it to the button
     //4. present/show a question in html
         //maybe: hide question in html before ready
