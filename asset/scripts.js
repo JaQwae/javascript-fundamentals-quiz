@@ -3,7 +3,7 @@
 // questions bank
 var arrayOfQuestions = [
     {
-        questions: 'Which of the follow output pairs corresponds with booleans?',
+        question: 'Which of the follow output pairs corresponds with booleans?',
 
         answers: [
             'Yes/No',
@@ -147,21 +147,22 @@ timer()
 //___cycles through questions___
 
 var questionPlaceholder= document.getElementById('displayed-question')
-var answerChoicePlaceholder = document.getElementByClassName('choice-text')
+var answerChoicePlaceholder = document.getElementsByClassName('choice-text')
 
 function displayQuestions() {
 //1.create a for loop
 for (let i = 0; i < arrayOfQuestions.length; i++) {
     //question displayed
-    var question = questionPlaceholder.textContent = arrayOfQuestions[i].question[0];
+    var question = questionPlaceholder.textContent = arrayOfQuestions[i].question;
     //answers choice displayed
-    var answer = [arrayOfQuestions[i].answer[0], arrayOfQuestions[i].answer[1], arrayOfQuestions[i].answer[2], arrayOfQuestions[i].answer[3]];
+    var answer = answerChoicePlaceholder.textContent = arrayOfQuestions[i].answer;
     // construct a while loop checking for correct answer
     //if answer is incorrect subtract points
-    while (answer != correctAnswer) {
-        timeRemaining = timeRemaining - 1
-    } if (correctAnswer == answer){ //if answer is correct go to the next
-        break;
+    while (answer[i] != correctAnswer[i]) {
+        timeRemaining = timeRemaining - 5
+        //if answer is correct go to the next
+        } if (correctAnswer[i] == answer[i]){
+            break;
     }
     //game over
     if (timeRemaining === 0 || i > arrayOfQuestions.length );
@@ -169,4 +170,4 @@ for (let i = 0; i < arrayOfQuestions.length; i++) {
     }
 }
 
-
+displayQuestions()
