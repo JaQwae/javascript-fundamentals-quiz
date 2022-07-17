@@ -123,11 +123,13 @@ var arrayOfQuestions = [
     },
 ]
 
+
+
 //_____________timer set up_________________
 var timeRemaining= document.getElementById('remaining-time');
 
 function timer() {
-    var timeLeft = 100;  //total time given
+    var timeLeft = 10;  //total time given
         
     var timeInterval = setInterval(function () {
         if (timeLeft > 0) {
@@ -142,7 +144,9 @@ function timer() {
 }   
 timer()
 
-
+function handleClick() {
+    
+}
 
 //__________Displays the question and answers_________________
 
@@ -151,7 +155,7 @@ var answerChoiceA = document.getElementById('choice-text-A');
 var answerChoiceB = document.getElementById('choice-text-B');
 var answerChoiceC = document.getElementById('choice-text-C');
 var answerChoiceD = document.getElementById('choice-text-D');
-var answerSelected = document.getElementsByClassName('choices').addEventListener('click', //function)
+
 function displayQuestions() {
 for (let i = 0; i < arrayOfQuestions.length; i++) {
     //question displayed
@@ -165,16 +169,21 @@ for (let i = 0; i < arrayOfQuestions.length; i++) {
 }
 displayQuestions() 
 
+
+
 function isCorrect () {
-    //if answer is incorrect subtract points
-    if (answerSelected != correctAnswer[i]) {
-        timeRemaining = timeRemaining - 5
-        //if answer is correct go to the next
+    document.addEventListener('click', e => {
+        if (e.target.matches('correctAnswer')) {
+            //proceed with for loop
+        }} else {
+            //if answer is incorrect subtract points
+            timeRemaining = timeRemaining - 5
+        })
     }
-}
 
 // function endGame () {
 //     if (timeRemaining === 0 || i > arrayOfQuestions.length );
 //          alert('Game Over! Thanks for playing')
 // }
 
+console.log(isCorrect)
