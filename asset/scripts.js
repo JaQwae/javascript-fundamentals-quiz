@@ -144,9 +144,14 @@ function timer() {
 }   
 timer()
 
+
+
 function handleClick() {
     
 }
+
+
+
 
 //__________Displays the question and answers_________________
 
@@ -171,15 +176,17 @@ displayQuestions()
 
 
 
-function isCorrect () {
+function isCorrect() {
     document.addEventListener('click', e => {
         if (e.target.matches('correctAnswer')) {
             //proceed with for loop
-        }} else {
+        } else {
             //if answer is incorrect subtract points
             timeRemaining = timeRemaining - 5
-        })
+        }})
+        console.log(isCorrect)
     }
+isCorrect()
 
 // function endGame () {
 //     if (timeRemaining === 0 || i > arrayOfQuestions.length );
