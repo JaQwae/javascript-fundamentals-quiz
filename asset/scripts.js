@@ -5,7 +5,7 @@ var arrayOfQuestions = [
     {
         question: 'Which of the follow output pairs corresponds with booleans?',
 
-        answers: [
+        answer: [
             'Yes/No',
             'True/False',
             'Right/Wrong',
@@ -123,11 +123,11 @@ var arrayOfQuestions = [
     },
 ]
 
-//___ timer set up___
+//_____________timer set up_________________
 var timeRemaining= document.getElementById('remaining-time');
 
 function timer() {
-    var timeLeft = 10;  //total time given
+    var timeLeft = 100;  //total time given
         
     var timeInterval = setInterval(function () {
         if (timeLeft > 0) {
@@ -140,43 +140,41 @@ function timer() {
             }
         }, 1000);
 }   
-
 timer()
 
 
-//___cycles through questions___
+
+//__________Displays the question and answers_________________
 
 var questionPlaceholder= document.getElementById('displayed-question');
 var answerChoiceA = document.getElementById('choice-text-A');
 var answerChoiceB = document.getElementById('choice-text-B');
 var answerChoiceC = document.getElementById('choice-text-C');
 var answerChoiceD = document.getElementById('choice-text-D');
-
-
-
-
+var answerSelected = document.getElementsByClassName('choices').addEventListener('click', //function)
 function displayQuestions() {
-//1.create a for loop
 for (let i = 0; i < arrayOfQuestions.length; i++) {
     //question displayed
-    var question = questionPlaceholder.textContent = arrayOfQuestions[i].question;
-    //answers choice displayed
-    var answerChoice1 = answerChoiceA.textContent = arrayOfQuestions[i].answer[0];
-    var answerChoice2 = answerChoiceB.textContent = arrayOfQuestions[i].answer[1];
-    var answerChoice3 = answerChoiceC.textContent = arrayOfQuestions[i].answer[2];
-    var answerChoice4 = answerChoiceD.textContent = arrayOfQuestions[i].answer[3];
-    // construct a while loop checking for correct answer
+    questionPlaceholder.textContent = arrayOfQuestions[i].question;
+        //answers choice displayed
+        answerChoiceA.textContent = arrayOfQuestions[i].answer[0];
+        answerChoiceB.textContent = arrayOfQuestions[i].answer[1];
+        answerChoiceC.textContent = arrayOfQuestions[i].answer[2];
+        answerChoiceD.textContent = arrayOfQuestions[i].answer[3];
+    }
+}
+displayQuestions() 
+
+function isCorrect () {
     //if answer is incorrect subtract points
-    while (answer[i] != correctAnswer[i]) {
+    if (answerSelected != correctAnswer[i]) {
         timeRemaining = timeRemaining - 5
         //if answer is correct go to the next
-        } if (correctAnswer[i] == answer[i]){
-            break;
-    }
-    //game over
-    if (timeRemaining === 0 || i > arrayOfQuestions.length );
-        alert('Game Over! Thanks for playing')
     }
 }
 
-displayQuestions()
+// function endGame () {
+//     if (timeRemaining === 0 || i > arrayOfQuestions.length );
+//          alert('Game Over! Thanks for playing')
+// }
+
