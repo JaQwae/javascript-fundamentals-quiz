@@ -122,3 +122,21 @@ var arrayOfQuestions = [
         correctAnswer: 'a'
     },
 ]
+
+//___ timer set up___
+var timeRemaining= document.getElementById('remaining-time');
+
+function timer() {
+    var timeLeft = 10;  //total time given
+        
+    var timeInterval = setInterval(function () {
+        if (timeLeft > 1) {
+            timeRemaining.textContent = timeLeft + ' s';
+            timeLeft--;
+            }//subtract for a wrong answer
+            else{
+                timeRemaining.textContent = '';
+                clearInterval(timeInterval);
+            }
+        }, 1000);
+}   
