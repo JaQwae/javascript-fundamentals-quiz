@@ -11,7 +11,7 @@ var arrayOfQuestions = [
             'Right/Wrong',
             'None of the above',
         ],
-        correctAnswer: 'True/False'
+        correctAnswer: 'B'
     },
     {
         question: "Which of the follow is not a primitive type in Javascript?",
@@ -23,7 +23,7 @@ var arrayOfQuestions = [
             'Boolean',
         ],
 
-        correctAnswer: 'Object'
+        correctAnswer: 'A'
     },
     {
         question: "Which of the follow is a 3rd party API for Javascript?",
@@ -35,7 +35,7 @@ var arrayOfQuestions = [
             'JQuery',
         ],
 
-        correctAnswer: 'JQuery'
+        correctAnswer: 'D'
     },
     {
         question: "All of the follow are loops in JS expect:",
@@ -47,7 +47,7 @@ var arrayOfQuestions = [
             'while',
         ],
 
-        correctAnswer: 'why'
+        correctAnswer: 'C'
     },
     {
         question: "Which is not considered a mouse event listener?",
@@ -59,7 +59,7 @@ var arrayOfQuestions = [
             'mousemove',
         ],
 
-        correctAnswer: 'doubleClick'
+        correctAnswer: 'B'
     },
     {
         question: "All of the follow are ways to declare a variable expect:",
@@ -71,7 +71,7 @@ var arrayOfQuestions = [
             'var',
         ],
 
-        correctAnswer: 'declar'
+        correctAnswer: 'C'
     },
     {
         question: "Say we have 5 === '5', will this default to true and why?",
@@ -83,7 +83,7 @@ var arrayOfQuestions = [
             'No, because that is not a valid assignment operator',
         ],
 
-        correctAnswer: 'No, because the operator is looking for same type and value'
+        correctAnswer: 'C'
     },
     {
         question: "When using the && assignment operator, what needs to be true for the conditional statement to evaluate to true?",
@@ -95,7 +95,7 @@ var arrayOfQuestions = [
             'All of the above',
         ],
 
-        correctAnswer: 'Both conditions need to be true'
+        correctAnswer: 'B'
     },
     {
         question: "When using the || assignment operator, what needs to be true for the conditional statement to evaluate to true?",
@@ -107,7 +107,7 @@ var arrayOfQuestions = [
             'All of the above',
         ],
 
-        correctAnswer: 'All of the above'
+        correctAnswer: 'D'
     },
     {
         question: "What is an array?",
@@ -119,7 +119,7 @@ var arrayOfQuestions = [
             'None of the above',
         ],
 
-        correctAnswer: 'An ordered list of values'
+        correctAnswer: 'A'
     },
 ]
 
@@ -146,13 +146,6 @@ timer()
 
 
 
-function handleClick() {
-    
-}
-
-
-
-
 //__________Displays the question and answers_________________
 
 var questionPlaceholder= document.getElementById('displayed-question');
@@ -175,6 +168,31 @@ for (let i = 0; i < arrayOfQuestions.length; i++) {
 displayQuestions() 
 
 
+selectedAnswer = []
+function handleClick() {
+    document.addEventListener('click', e => {
+        if (e.target.matches('choice-text-A')){
+            var selectedAnswerA = 'A';
+            return selectedAnswerA;
+        }
+        if (e.target.matches('choice-text-B')){
+            var selectedAnswerB = 'B';
+            return selectedAnswerB;
+        }
+        if (e.target.matches('choice-text-C')){
+            var selectedAnswerC = 'C';
+            return selectedAnswerC;
+        }
+        if (e.target.matches('choice-text-D')){
+            var selectedAnswerD = 'D';
+            return selectedAnswerD;
+        }
+    })
+}
+handleClick() 
+console.log(handleClick())
+
+
 
 function isCorrect() {
     document.addEventListener('click', e => {
@@ -184,7 +202,6 @@ function isCorrect() {
             //if answer is incorrect subtract points
             timeRemaining = timeRemaining - 5
         }})
-        console.log(isCorrect)
     }
 isCorrect()
 
@@ -192,5 +209,3 @@ isCorrect()
 //     if (timeRemaining === 0 || i > arrayOfQuestions.length );
 //          alert('Game Over! Thanks for playing')
 // }
-
-console.log(isCorrect)
