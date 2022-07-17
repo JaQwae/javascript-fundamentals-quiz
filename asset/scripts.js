@@ -127,7 +127,7 @@ var arrayOfQuestions = [
 var timeRemaining= document.getElementById('remaining-time');
 
 function timer() {
-    var timeLeft = 5;  //total time given
+    var timeLeft = 10;  //total time given
         
     var timeInterval = setInterval(function () {
         if (timeLeft > 0) {
@@ -149,17 +149,24 @@ timer()
 var questionPlaceholder= document.getElementById('displayed-question')
 var answerChoicePlaceholder = document.getElementByClassName('choice-text')
 
+function displayQuestions() {
 //1.create a for loop
 for (let i = 0; i < arrayOfQuestions.length; i++) {
     //question displayed
-    var question = questionPlaceholder.textContent = arrayOfQuestions[0];
+    var question = questionPlaceholder.textContent = arrayOfQuestions[i].question[0];
     //answers choice displayed
     var answer = [arrayOfQuestions[i].answer[0], arrayOfQuestions[i].answer[1], arrayOfQuestions[i].answer[2], arrayOfQuestions[i].answer[3]];
     // construct a while loop checking for correct answer
-        //if answer is correct go to the next
-        //else answer is incorrect subtract points
-        // timeRemaining = timeRemaining - 1
-    //game over
-        // timeRemaining === 0
-        // i > arrayOfQuestions.length 
+    //if answer is incorrect subtract points
+    while (answer != correctAnswer) {
+        timeRemaining = timeRemaining - 1
+    } if (correctAnswer == answer){ //if answer is correct go to the next
+        break;
     }
+    //game over
+    if (timeRemaining === 0 || i > arrayOfQuestions.length );
+        alert('Game Over! Thanks for playing')
+    }
+}
+
+
