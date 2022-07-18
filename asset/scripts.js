@@ -127,7 +127,7 @@ var arrayOfQuestions = [
 
 //_____________timer set up_________________
 var timeRemaining= document.getElementById('remaining-time');
-var timeLeft = 100;
+var timeLeft = 1000;
 
 function timer() {    
     var timeInterval = setInterval(function () {
@@ -188,7 +188,7 @@ function timeReduction(){
 
 //cycles through the questions
 function nextQuestion (event) {
-    //corret answer
+    //correct answer
     if (event.target.innerHTML == arrayOfQuestions[num].correctAnswer){
         scoreTracker();//adds points
         //moves to next question
@@ -201,7 +201,7 @@ function nextQuestion (event) {
             num++; 
             displayQuestions();
             }
-    if (num > arrayOfQuestions.question ) {
+    if (num > arrayOfQuestions.question.length ) {
         endGame()
     }
 }

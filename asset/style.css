@@ -68,7 +68,7 @@ h2{
 /* format of page*/
 .choice-container {
     display: flex;
-    background-color: var(--blue);
+    background-color: rgb(31, 30, 30);
     margin-bottom: 60px;
     padding: 20px;
     font-size: 25px;
@@ -115,8 +115,38 @@ input {
     font-size: 25px;
 }
 
+/* ___________Answer choice button styles___________ */
 .btnA{
     width:100vw;
     height: 80px;
-    background-image: linear-gradient(var(--blue),var(--yellow))
+    background-image: linear-gradient(var(--blue),var(--yellow));
+    color:var(--yellow);
+    font-size: 30px;
+    border-radius: 15px;
 }
+
+.btnB{
+    width:100vw;
+    height: 80px;
+    background-image: linear-gradient(var(--blue),var(--yellow));
+    color:var(--yellow);
+    font-size: 30px;
+    border-radius: 15px;
+}
+.btnC{
+    width:100vw;
+    height: 80px;
+    background-image: linear-gradient(var(--blue),var(--yellow));
+    color:var(--yellow);
+    font-size: 30px;
+    border-radius: 15px;
+}
+.btnD{
+    width:100vw;
+    height: 80px;
+    background-image: linear-gradient(var(--blue),var(--yellow));
+    color:var(--yellow);
+    font-size: 30px;
+    border-radius: 15px;
+}
+
