@@ -25,18 +25,18 @@ var arrayOfQuestions = [
 
         correctAnswer: 'Object'
     },
-    // {
-    //     question: "Which of the follow is a 3rd party API for Javascript?",
+    {
+        question: "Which of the follow is a 3rd party API for Javascript?",
         
-    //     answer: [
-    //         'Event listener',
-    //         'DOM',
-    //         'CSS',
-    //         'JQuery',
-    //     ],
+        answer: [
+            'Event listener',
+            'DOM',
+            'CSS',
+            'JQuery',
+        ],
 
-    //     correctAnswer: 'JQuery'
-    // },
+        correctAnswer: 'JQuery'
+    },
     // {
     //     question: "All of the follow are loops in JS expect:",
         
@@ -135,7 +135,7 @@ function timer() {
         if (timeLeft > 0) {
             timeRemaining.textContent = timeLeft + ' s';
             timeLeft--;
-            }//subtract for a wrong answer
+            }
             else{
                 timeRemaining.textContent = '';
                 clearInterval(timeInterval);
@@ -156,32 +156,29 @@ var answerChoiceD = document.getElementById('choice-text-D');
 let num = 0;
 
 function displayQuestions() {
-// for (let i = 0; i < arrayOfQuestions.length; i++) {
-    //question displayed
-    questionPlaceholder.textContent = arrayOfQuestions[num].question;
-        //answers choice displayed
-        answerChoiceA.textContent = arrayOfQuestions[num].answer[0];
-        answerChoiceB.textContent = arrayOfQuestions[num].answer[1];
-        answerChoiceC.textContent = arrayOfQuestions[num].answer[2];
-        answerChoiceD.textContent = arrayOfQuestions[num].answer[3];
-    
-        // if (timeRemaining === 0 || num > arrayOfQuestions.length ){
-        //     console.log(timeRemaining);
-        //     endGame();
-        // }
-    // }
+//question displayed
+questionPlaceholder.textContent = arrayOfQuestions[num].question;
+//answers choice displayed
+    answerChoiceA.textContent = arrayOfQuestions[num].answer[0];
+    answerChoiceB.textContent = arrayOfQuestions[num].answer[1];
+    answerChoiceC.textContent = arrayOfQuestions[num].answer[2];
+    answerChoiceD.textContent = arrayOfQuestions[num].answer[3];
 }
 displayQuestions() 
 
+
+
 function nextQuestion (event) {
-    if (event == arrayOfQuestions[num].correctAnswer){
+    if (event.target.innerHTML == arrayOfQuestions[num].correctAnswer){
+        //adds points for correct answer
         num++;
         displayQuestions();
     } else {
+        //function that subtract time for timer
         timeRemaining = timeRemaining - 5;
         displayQuestions();
         }
-    console.log(event.target.arrayOfQuestions[2])
+    console.log(arrayOfQuestions[num].correctAnswer)
 }
 
 // Allow the A button to be clicked
@@ -201,46 +198,10 @@ buttonC.addEventListener('click', nextQuestion);
 var buttonD = document.querySelector('.btnD');
 buttonD.addEventListener('click', nextQuestion);
 
-function endGame() {
-    alert('Game Over! Thanks for playing')
-}
-
-
-
-// function handleClick() {
-//     document.addEventListener('click', e => {
-//         if (e.target.matches('p#choice-text-A')){
-//             var selectedAnswerA = 'A';
-//             return selectedAnswer.concat(selectedAnswerA);
-//         }
-//         if (e.target.matches('p#choice-text-B')){
-//             var selectedAnswerB = 'B';
-//             return selectedAnswer.concat(selectedAnswerB)
-//         }
-//         if (e.target.matches('p#choice-text-C')){
-//             var selectedAnswerC = 'C';
-//             return selectedAnswer.concat(selectedAnswerC);
-//         }
-//         if (e.target.matches('p#choice-text-D')){
-//             var selectedAnswerD = 'D';
-//             return selectedAnswer.concat(selectedAnswerD);
-//         }
-//     console.log()
-//     })
-// }
-// // handleClick() 
-
-
-
-
-// function isCorrect() {
-//     //check if answer is correct
-//     document.addEventListener('click', e => {
-//         if (e.target.matches('correctAnswer') == selectedAnswer) {
-//             //proceed with for loop
-//         } else {
-//             //if answer is incorrect subtract points
-//             timeRemaining = timeRemaining - 5
-//         }})
+// function endGame() {
+//     if (timeRemaining === 0 || num > arrayOfQuestions.length ) {
+//         alert('Game Over! Thanks for playing')
 //     }
-// isCorrect()
+// }
+
+
