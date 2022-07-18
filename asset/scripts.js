@@ -168,6 +168,7 @@ for (let i = 0; i < arrayOfQuestions.length; i++) {
 displayQuestions() 
 
 selectedAnswer = ''
+// function that handles the click
 function handleClick() {
     document.addEventListener('click', e => {
         if (e.target.matches('p#choice-text-A')){
@@ -192,7 +193,9 @@ handleClick()
 
 
 
+
 function isCorrect() {
+    //check if answer is correct
     document.addEventListener('click', e => {
         if (e.target.matches('correctAnswer') == selectedAnswer) {
             //proceed with for loop
@@ -203,7 +206,8 @@ function isCorrect() {
     }
 isCorrect()
 
-// function endGame () {
-//     if (timeRemaining === 0 || i > arrayOfQuestions.length );
-//          alert('Game Over! Thanks for playing')
-// }
+function endGame () {
+    if (timeRemaining === 0 || i > arrayOfQuestions.length );
+        alert('Game Over! Thanks for playing')
+}
+endGame()
