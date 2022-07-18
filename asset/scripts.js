@@ -129,7 +129,7 @@ var arrayOfQuestions = [
 var timeRemaining= document.getElementById('remaining-time');
 
 function timer() {
-    var timeLeft = 10;  //total time given
+    var timeLeft = 100;  //total time given
         
     var timeInterval = setInterval(function () {
         if (timeLeft > 0) {
@@ -139,6 +139,7 @@ function timer() {
             else{
                 timeRemaining.textContent = '';
                 clearInterval(timeInterval);
+                endGame();
             }
         }, 1000);
 }   
@@ -198,10 +199,9 @@ buttonC.addEventListener('click', nextQuestion);
 var buttonD = document.querySelector('.btnD');
 buttonD.addEventListener('click', nextQuestion);
 
-// function endGame() {
-//     if (timeRemaining === 0 || num > arrayOfQuestions.length ) {
-//         alert('Game Over! Thanks for playing')
-//     }
-// }
+function endGame() {
+    alert('Game Over! Thanks for playing');
+    
+}
 
 
