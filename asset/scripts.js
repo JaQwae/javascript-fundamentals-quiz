@@ -136,10 +136,11 @@ function timer() {
             timeRemaining.textContent = timeLeft + ' s';
             timeLeft--;
             }
+            //once time hits 0
             else{
                 timeRemaining.textContent = '';
                 clearInterval(timeInterval);
-                endGame();
+                endGame(); //displays ending message
             }
         }, 1000);
 }   
@@ -168,10 +169,20 @@ questionPlaceholder.textContent = arrayOfQuestions[num].question;
 displayQuestions() 
 
 
+var score = document.getElementById('score-count')
+
+function scoreTracker(event) {
+    var playerScore = 0; //starting score
+    playerScore = playerScore += 5;
+    score.textContent = playerScore;
+    console.log(playerScore)
+}
+
+
 
 function nextQuestion (event) {
     if (event.target.innerHTML == arrayOfQuestions[num].correctAnswer){
-        //adds points for correct answer
+        scoreTracker();//adds points for correct answer
         num++;
         displayQuestions();
     } else {
