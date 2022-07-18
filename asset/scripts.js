@@ -127,10 +127,9 @@ var arrayOfQuestions = [
 
 //_____________timer set up_________________
 var timeRemaining= document.getElementById('remaining-time');
+var timeLeft = 100;
 
-function timer() {
-    var timeLeft = 100;  //total time given
-        
+function timer() {    
     var timeInterval = setInterval(function () {
         if (timeLeft > 0) {
             timeRemaining.textContent = timeLeft + ' s';
@@ -169,25 +168,37 @@ questionPlaceholder.textContent = arrayOfQuestions[num].question;
 displayQuestions() 
 
 
-var score = document.getElementById('score-count')
 
+var score = document.getElementById('score-count')
+//keeps track of the score
+var playerScore = 0; 
+
+//adds points to the score in HUD
 function scoreTracker(event) {
-    var playerScore = 0; //starting score
     playerScore = playerScore += 5;
     score.textContent = playerScore;
     console.log(playerScore)
 }
 
+//subtracts time off time left in HUD
+function timeReduction(){
+    timeLeft = timeLeft - 5;
+    timeRemaining.textContent = timeLeft;
+}
 
-
+//cycles through the questions
 function nextQuestion (event) {
+    //corret answer
     if (event.target.innerHTML == arrayOfQuestions[num].correctAnswer){
-        scoreTracker();//adds points for correct answer
-        num++;
+        scoreTracker();//adds points
+        //moves to next question
+        num++; 
         displayQuestions();
+    //incorrect answer
     } else {
-        //function that subtract time for timer
-        timeRemaining = timeRemaining - 5;
+        timeReduction(); //subtracts time
+        //moves to next question
+        num++; 
         displayQuestions();
         }
     console.log(arrayOfQuestions[num].correctAnswer)
