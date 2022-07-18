@@ -153,7 +153,7 @@ var answerChoiceA = document.getElementById('choice-text-A');
 var answerChoiceB = document.getElementById('choice-text-B');
 var answerChoiceC = document.getElementById('choice-text-C');
 var answerChoiceD = document.getElementById('choice-text-D');
-var num = 0;
+let num = 0;
 
 function displayQuestions() {
 // for (let i = 0; i < arrayOfQuestions.length; i++) {
@@ -174,37 +174,32 @@ function displayQuestions() {
 displayQuestions() 
 
 function nextQuestion (event) {
-    if (event.target.value === 'buttonB'){
+    if (event == arrayOfQuestions[num].correctAnswer){
         num++;
         displayQuestions();
     } else {
         timeRemaining = timeRemaining - 5;
-    }
-    if (event.target.value === 'Object'){
-        num++;
         displayQuestions();
-    } else {
-        timeRemaining = timeRemaining - 5;
-    }
-    console.log(event.target.value)
+        }
+    console.log(event.target.arrayOfQuestions[2])
 }
 
 // Allow the A button to be clicked
 var buttonA = document.querySelector('.btnA');
-buttonA.addEventListener('click', nextQuestion)
+buttonA.addEventListener('click', nextQuestion);
 
 // Allow the B button to be clicked
 var buttonB = document.querySelector('.btnB');
-buttonB.addEventListener('click', nextQuestion)
+buttonB.addEventListener('click', nextQuestion);
 
 // Allow the C button to be clicked
 var buttonC = document.querySelector('.btnC');
-buttonC.addEventListener('click', nextQuestion)
+buttonC.addEventListener('click', nextQuestion);
 
 
 // Allow the D button to be clicked
 var buttonD = document.querySelector('.btnD');
-buttonD.addEventListener('click', nextQuestion)
+buttonD.addEventListener('click', nextQuestion);
 
 function endGame() {
     alert('Game Over! Thanks for playing')
