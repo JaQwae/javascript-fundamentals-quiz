@@ -165,7 +165,7 @@ function displayQuestions() {
         answerChoiceC.textContent = arrayOfQuestions[num].answer[2];
         answerChoiceD.textContent = arrayOfQuestions[num].answer[3];
     
-        // if (timeRemaining === 0 || i > arrayOfQuestions.length ){
+        // if (timeRemaining === 0 || num > arrayOfQuestions.length ){
         //     console.log(timeRemaining);
         //     endGame();
         // }
@@ -174,24 +174,20 @@ function displayQuestions() {
 displayQuestions() 
 
 function nextQuestion (event) {
-    if (event.target === 'buttonB'){
+    if (event.target.value === 'buttonB'){
         num++;
         displayQuestions();
     } else {
-        timeRemaining = timeRemaining - 5
-        displayQuestions();
+        timeRemaining = timeRemaining - 5;
     }
     if (event.target.value === 'Object'){
         num++;
         displayQuestions();
     } else {
-        num++;
-        displayQuestions();
+        timeRemaining = timeRemaining - 5;
     }
     console.log(event.target.value)
 }
-
-
 
 // Allow the A button to be clicked
 var buttonA = document.querySelector('.btnA');
@@ -213,7 +209,6 @@ buttonD.addEventListener('click', nextQuestion)
 function endGame() {
     alert('Game Over! Thanks for playing')
 }
-
 
 
 
