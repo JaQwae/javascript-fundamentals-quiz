@@ -167,36 +167,34 @@ for (let i = 0; i < arrayOfQuestions.length; i++) {
 }
 displayQuestions() 
 
-
-selectedAnswer = []
+selectedAnswer = ''
 function handleClick() {
     document.addEventListener('click', e => {
-        if (e.target.matches('choice-text-A')){
+        if (e.target.matches('p#choice-text-A')){
             var selectedAnswerA = 'A';
-            return selectedAnswerA;
+            return selectedAnswer.concat(selectedAnswerA);
         }
-        if (e.target.matches('choice-text-B')){
+        if (e.target.matches('p#choice-text-B')){
             var selectedAnswerB = 'B';
-            return selectedAnswerB;
+            return selectedAnswer.concat(selectedAnswerB)
         }
-        if (e.target.matches('choice-text-C')){
+        if (e.target.matches('p#choice-text-C')){
             var selectedAnswerC = 'C';
-            return selectedAnswerC;
+            return selectedAnswer.concat(selectedAnswerC);
         }
-        if (e.target.matches('choice-text-D')){
+        if (e.target.matches('p#choice-text-D')){
             var selectedAnswerD = 'D';
-            return selectedAnswerD;
+            return selectedAnswer.concat(selectedAnswerD);
         }
     })
 }
 handleClick() 
-console.log(handleClick())
 
 
 
 function isCorrect() {
     document.addEventListener('click', e => {
-        if (e.target.matches('correctAnswer')) {
+        if (e.target.matches('correctAnswer') == selectedAnswer) {
             //proceed with for loop
         } else {
             //if answer is incorrect subtract points
