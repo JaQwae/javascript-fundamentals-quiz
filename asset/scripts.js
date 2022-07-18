@@ -11,7 +11,7 @@ var arrayOfQuestions = [
             'Right/Wrong',
             'None of the above',
         ],
-        correctAnswer: 'B'
+        correctAnswer: 'True/False'
     },
     {
         question: "Which of the follow is not a primitive type in Javascript?",
@@ -23,104 +23,104 @@ var arrayOfQuestions = [
             'Boolean',
         ],
 
-        correctAnswer: 'A'
+        correctAnswer: 'Object'
     },
-    {
-        question: "Which of the follow is a 3rd party API for Javascript?",
+    // {
+    //     question: "Which of the follow is a 3rd party API for Javascript?",
         
-        answer: [
-            'Event listener',
-            'DOM',
-            'CSS',
-            'JQuery',
-        ],
+    //     answer: [
+    //         'Event listener',
+    //         'DOM',
+    //         'CSS',
+    //         'JQuery',
+    //     ],
 
-        correctAnswer: 'D'
-    },
-    {
-        question: "All of the follow are loops in JS expect:",
+    //     correctAnswer: 'JQuery'
+    // },
+    // {
+    //     question: "All of the follow are loops in JS expect:",
         
-        answer: [
-            'for/in',
-            'for',
-            'why',
-            'while',
-        ],
+    //     answer: [
+    //         'for/in',
+    //         'for',
+    //         'why',
+    //         'while',
+    //     ],
 
-        correctAnswer: 'C'
-    },
-    {
-        question: "Which is not considered a mouse event listener?",
+    //     correctAnswer: 'why'
+    // },
+    // {
+    //     question: "Which is not considered a mouse event listener?",
         
-        answer: [
-            'click',
-            'doubleClick',
-            'mousedown',
-            'mousemove',
-        ],
+    //     answer: [
+    //         'click',
+    //         'doubleClick',
+    //         'mousedown',
+    //         'mousemove',
+    //     ],
 
-        correctAnswer: 'B'
-    },
-    {
-        question: "All of the follow are ways to declare a variable expect:",
+    //     correctAnswer: 'doubleClick'
+    // },
+    // {
+    //     question: "All of the follow are ways to declare a variable expect:",
         
-        answer: [
-            'let',
-            'const',
-            'declar',
-            'var',
-        ],
+    //     answer: [
+    //         'let',
+    //         'const',
+    //         'declar',
+    //         'var',
+    //     ],
 
-        correctAnswer: 'C'
-    },
-    {
-        question: "Say we have 5 === '5', will this default to true and why?",
+    //     correctAnswer: 'declar'
+    // },
+    // {
+    //     question: "Say we have 5 === '5', will this default to true and why?",
         
-        answer: [
-            'Yes, both have the say value',
-            'Yes, because the three equal forces everything to be equal',
-            'No, because the operator is looking for same type and value',
-            'No, because that is not a valid assignment operator',
-        ],
+    //     answer: [
+    //         'Yes, both have the say value',
+    //         'Yes, because the three equal forces everything to be equal',
+    //         'No, because the operator is looking for same type and value',
+    //         'No, because that is not a valid assignment operator',
+    //     ],
 
-        correctAnswer: 'C'
-    },
-    {
-        question: "When using the && assignment operator, what needs to be true for the conditional statement to evaluate to true?",
+    //     correctAnswer: 'No, because the operator is looking for same type and value'
+    // },
+    // {
+    //     question: "When using the && assignment operator, what needs to be true for the conditional statement to evaluate to true?",
         
-        answer: [
-            'The condition only on the left side of the operator needs to be true',
-            'Both conditions need to be true',
-            'The condition only on the right side of the operator needs to be true',
-            'All of the above',
-        ],
+    //     answer: [
+    //         'The condition only on the left side of the operator needs to be true',
+    //         'Both conditions need to be true',
+    //         'The condition only on the right side of the operator needs to be true',
+    //         'All of the above',
+    //     ],
 
-        correctAnswer: 'B'
-    },
-    {
-        question: "When using the || assignment operator, what needs to be true for the conditional statement to evaluate to true?",
+    //     correctAnswer: 'B'
+    // },
+    // {
+    //     question: "When using the || assignment operator, what needs to be true for the conditional statement to evaluate to true?",
         
-        answer: [
-            'The condition only on the left side of the operator needs to be true',
-            'The condition only on the right side of the operator needs to be true',
-            'Both conditions need to be true',
-            'All of the above',
-        ],
+    //     answer: [
+    //         'The condition only on the left side of the operator needs to be true',
+    //         'The condition only on the right side of the operator needs to be true',
+    //         'Both conditions need to be true',
+    //         'All of the above',
+    //     ],
 
-        correctAnswer: 'D'
-    },
-    {
-        question: "What is an array?",
+    //     correctAnswer: 'D'
+    // },
+    // {
+    //     question: "What is an array?",
         
-        answer: [
-            'An ordered list of values',
-            'A primitive type',
-            'An empty string',
-            'None of the above',
-        ],
+    //     answer: [
+    //         'An ordered list of values',
+    //         'A primitive type',
+    //         'An empty string',
+    //         'None of the above',
+    //     ],
 
-        correctAnswer: 'A'
-    },
+    //     correctAnswer: 'A'
+    // },
 ]
 
 
@@ -153,61 +153,104 @@ var answerChoiceA = document.getElementById('choice-text-A');
 var answerChoiceB = document.getElementById('choice-text-B');
 var answerChoiceC = document.getElementById('choice-text-C');
 var answerChoiceD = document.getElementById('choice-text-D');
+var num = 0;
 
 function displayQuestions() {
-for (let i = 0; i < arrayOfQuestions.length; i++) {
+// for (let i = 0; i < arrayOfQuestions.length; i++) {
     //question displayed
-    questionPlaceholder.textContent = arrayOfQuestions[i].question;
+    questionPlaceholder.textContent = arrayOfQuestions[num].question;
         //answers choice displayed
-        answerChoiceA.textContent = arrayOfQuestions[i].answer[0];
-        answerChoiceB.textContent = arrayOfQuestions[i].answer[1];
-        answerChoiceC.textContent = arrayOfQuestions[i].answer[2];
-        answerChoiceD.textContent = arrayOfQuestions[i].answer[3];
-    }
+        answerChoiceA.textContent = arrayOfQuestions[num].answer[0];
+        answerChoiceB.textContent = arrayOfQuestions[num].answer[1];
+        answerChoiceC.textContent = arrayOfQuestions[num].answer[2];
+        answerChoiceD.textContent = arrayOfQuestions[num].answer[3];
+    
+        // if (timeRemaining === 0 || i > arrayOfQuestions.length ){
+        //     console.log(timeRemaining);
+        //     endGame();
+        // }
+    // }
 }
 displayQuestions() 
 
-selectedAnswer = ''
-// function that handles the click
-function handleClick() {
-    document.addEventListener('click', e => {
-        if (e.target.matches('p#choice-text-A')){
-            var selectedAnswerA = 'A';
-            return selectedAnswer.concat(selectedAnswerA);
-        }
-        if (e.target.matches('p#choice-text-B')){
-            var selectedAnswerB = 'B';
-            return selectedAnswer.concat(selectedAnswerB)
-        }
-        if (e.target.matches('p#choice-text-C')){
-            var selectedAnswerC = 'C';
-            return selectedAnswer.concat(selectedAnswerC);
-        }
-        if (e.target.matches('p#choice-text-D')){
-            var selectedAnswerD = 'D';
-            return selectedAnswer.concat(selectedAnswerD);
-        }
-    })
-}
-handleClick() 
-
-
-
-
-function isCorrect() {
-    //check if answer is correct
-    document.addEventListener('click', e => {
-        if (e.target.matches('correctAnswer') == selectedAnswer) {
-            //proceed with for loop
-        } else {
-            //if answer is incorrect subtract points
-            timeRemaining = timeRemaining - 5
-        }})
+function nextQuestion (event) {
+    if (event.target === 'buttonB'){
+        num++;
+        displayQuestions();
+    } else {
+        timeRemaining = timeRemaining - 5
+        displayQuestions();
     }
-isCorrect()
-
-function endGame () {
-    if (timeRemaining === 0 || i > arrayOfQuestions.length );
-        alert('Game Over! Thanks for playing')
+    if (event.target.value === 'Object'){
+        num++;
+        displayQuestions();
+    } else {
+        num++;
+        displayQuestions();
+    }
+    console.log(event.target.value)
 }
-endGame()
+
+
+
+// Allow the A button to be clicked
+var buttonA = document.querySelector('.btnA');
+buttonA.addEventListener('click', nextQuestion)
+
+// Allow the B button to be clicked
+var buttonB = document.querySelector('.btnB');
+buttonB.addEventListener('click', nextQuestion)
+
+// Allow the C button to be clicked
+var buttonC = document.querySelector('.btnC');
+buttonC.addEventListener('click', nextQuestion)
+
+
+// Allow the D button to be clicked
+var buttonD = document.querySelector('.btnD');
+buttonD.addEventListener('click', nextQuestion)
+
+function endGame() {
+    alert('Game Over! Thanks for playing')
+}
+
+
+
+
+// function handleClick() {
+//     document.addEventListener('click', e => {
+//         if (e.target.matches('p#choice-text-A')){
+//             var selectedAnswerA = 'A';
+//             return selectedAnswer.concat(selectedAnswerA);
+//         }
+//         if (e.target.matches('p#choice-text-B')){
+//             var selectedAnswerB = 'B';
+//             return selectedAnswer.concat(selectedAnswerB)
+//         }
+//         if (e.target.matches('p#choice-text-C')){
+//             var selectedAnswerC = 'C';
+//             return selectedAnswer.concat(selectedAnswerC);
+//         }
+//         if (e.target.matches('p#choice-text-D')){
+//             var selectedAnswerD = 'D';
+//             return selectedAnswer.concat(selectedAnswerD);
+//         }
+//     console.log()
+//     })
+// }
+// // handleClick() 
+
+
+
+
+// function isCorrect() {
+//     //check if answer is correct
+//     document.addEventListener('click', e => {
+//         if (e.target.matches('correctAnswer') == selectedAnswer) {
+//             //proceed with for loop
+//         } else {
+//             //if answer is incorrect subtract points
+//             timeRemaining = timeRemaining - 5
+//         }})
+//     }
+// isCorrect()
