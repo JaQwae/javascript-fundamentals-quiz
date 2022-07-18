@@ -114,3 +114,9 @@ input {
     width: 400px;
     font-size: 25px;
 }
+
+.btnA{
+    width:100vw;
+    height: 80px;
+    background-image: linear-gradient(var(--blue),var(--yellow))
+}

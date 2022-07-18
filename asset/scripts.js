@@ -37,90 +37,90 @@ var arrayOfQuestions = [
 
         correctAnswer: 'JQuery'
     },
-    // {
-    //     question: "All of the follow are loops in JS expect:",
+    {
+        question: "All of the follow are loops in JS expect:",
         
-    //     answer: [
-    //         'for/in',
-    //         'for',
-    //         'why',
-    //         'while',
-    //     ],
+        answer: [
+            'for/in',
+            'for',
+            'why',
+            'while',
+        ],
 
-    //     correctAnswer: 'why'
-    // },
-    // {
-    //     question: "Which is not considered a mouse event listener?",
+        correctAnswer: 'why'
+    },
+    {
+        question: "Which is not considered a mouse event listener?",
         
-    //     answer: [
-    //         'click',
-    //         'doubleClick',
-    //         'mousedown',
-    //         'mousemove',
-    //     ],
+        answer: [
+            'click',
+            'doubleClick',
+            'mousedown',
+            'mousemove',
+        ],
 
-    //     correctAnswer: 'doubleClick'
-    // },
-    // {
-    //     question: "All of the follow are ways to declare a variable expect:",
+        correctAnswer: 'doubleClick'
+    },
+    {
+        question: "All of the follow are ways to declare a variable expect:",
         
-    //     answer: [
-    //         'let',
-    //         'const',
-    //         'declar',
-    //         'var',
-    //     ],
+        answer: [
+            'let',
+            'const',
+            'declar',
+            'var',
+        ],
 
-    //     correctAnswer: 'declar'
-    // },
-    // {
-    //     question: "Say we have 5 === '5', will this default to true and why?",
+        correctAnswer: 'declar'
+    },
+    {
+        question: "Say we have 5 === '5', will this default to true and why?",
         
-    //     answer: [
-    //         'Yes, both have the say value',
-    //         'Yes, because the three equal forces everything to be equal',
-    //         'No, because the operator is looking for same type and value',
-    //         'No, because that is not a valid assignment operator',
-    //     ],
+        answer: [
+            'Yes, both have the say value',
+            'Yes, because the three equal forces everything to be equal',
+            'No, because the operator is looking for same type and value',
+            'No, because that is not a valid assignment operator',
+        ],
 
-    //     correctAnswer: 'No, because the operator is looking for same type and value'
-    // },
-    // {
-    //     question: "When using the && assignment operator, what needs to be true for the conditional statement to evaluate to true?",
+        correctAnswer: 'No, because the operator is looking for same type and value'
+    },
+    {
+        question: "When using the && assignment operator, what needs to be true for the conditional statement to evaluate to true?",
         
-    //     answer: [
-    //         'The condition only on the left side of the operator needs to be true',
-    //         'Both conditions need to be true',
-    //         'The condition only on the right side of the operator needs to be true',
-    //         'All of the above',
-    //     ],
+        answer: [
+            'The condition only on the left side of the operator needs to be true',
+            'Both conditions need to be true',
+            'The condition only on the right side of the operator needs to be true',
+            'All of the above',
+        ],
 
-    //     correctAnswer: 'B'
-    // },
-    // {
-    //     question: "When using the || assignment operator, what needs to be true for the conditional statement to evaluate to true?",
+        correctAnswer: 'B'
+    },
+    {
+        question: "When using the || assignment operator, what needs to be true for the conditional statement to evaluate to true?",
         
-    //     answer: [
-    //         'The condition only on the left side of the operator needs to be true',
-    //         'The condition only on the right side of the operator needs to be true',
-    //         'Both conditions need to be true',
-    //         'All of the above',
-    //     ],
+        answer: [
+            'The condition only on the left side of the operator needs to be true',
+            'The condition only on the right side of the operator needs to be true',
+            'Both conditions need to be true',
+            'All of the above',
+        ],
 
-    //     correctAnswer: 'D'
-    // },
-    // {
-    //     question: "What is an array?",
+        correctAnswer: 'D'
+    },
+    {
+        question: "What is an array?",
         
-    //     answer: [
-    //         'An ordered list of values',
-    //         'A primitive type',
-    //         'An empty string',
-    //         'None of the above',
-    //     ],
+        answer: [
+            'An ordered list of values',
+            'A primitive type',
+            'An empty string',
+            'None of the above',
+        ],
 
-    //     correctAnswer: 'A'
-    // },
+        correctAnswer: 'A'
+    },
 ]
 
 
@@ -194,14 +194,16 @@ function nextQuestion (event) {
         //moves to next question
         num++; 
         displayQuestions();
-    //incorrect answer
-    } else {
-        timeReduction(); //subtracts time
-        //moves to next question
-        num++; 
-        displayQuestions();
-        }
-    console.log(arrayOfQuestions[num].correctAnswer)
+        //incorrect answer
+        } else {
+            timeReduction(); //subtracts time
+            //moves to next question
+            num++; 
+            displayQuestions();
+            }
+    if (num > arrayOfQuestions.question ) {
+        endGame()
+    }
 }
 
 // Allow the A button to be clicked
