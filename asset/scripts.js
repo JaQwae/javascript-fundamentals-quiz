@@ -127,7 +127,7 @@ var arrayOfQuestions = [
 
 //_____________timer set up_________________
 var timeRemaining= document.getElementById('remaining-time');
-var timeLeft = 1000;
+var timeLeft = 100;
 
 function timer() {    
     var timeInterval = setInterval(function () {
@@ -157,13 +157,15 @@ var answerChoiceD = document.getElementById('choice-text-D');
 let num = 0;
 
 function displayQuestions() {
-//question displayed
-questionPlaceholder.textContent = arrayOfQuestions[num].question;
-//answers choice displayed
-    answerChoiceA.textContent = arrayOfQuestions[num].answer[0];
-    answerChoiceB.textContent = arrayOfQuestions[num].answer[1];
-    answerChoiceC.textContent = arrayOfQuestions[num].answer[2];
-    answerChoiceD.textContent = arrayOfQuestions[num].answer[3];
+    if (num <= 9){
+    //question displayed
+    questionPlaceholder.textContent = arrayOfQuestions[num].question;
+    //answers choice displayed
+        answerChoiceA.textContent = arrayOfQuestions[num].answer[0];
+        answerChoiceB.textContent = arrayOfQuestions[num].answer[1];
+        answerChoiceC.textContent = arrayOfQuestions[num].answer[2];
+        answerChoiceD.textContent = arrayOfQuestions[num].answer[3];
+    }
 }
 displayQuestions() 
 
@@ -201,7 +203,7 @@ function nextQuestion (event) {
             num++; 
             displayQuestions();
             }
-    if (num > arrayOfQuestions.question.length ) {
+    if (num + 1 > arrayOfQuestions.length) {
         endGame()
     }
 }
@@ -224,8 +226,23 @@ var buttonD = document.querySelector('.btnD');
 buttonD.addEventListener('click', nextQuestion);
 
 function endGame() {
-    alert('Game Over! Thanks for playing');
-    
-}
+    confirm('Game Over! Thanks for playing! If you would like to save your score press OK');
+    location.href = 'leaderboard.html';
+    localStorage.setItem('UserScore', playerScore);
+    //need to pass variable for score to leaderboard page
 
+}
+//need to pass this to leaderboard html
+// var playerScore = 0; 
+
+var playerInfo = {
+    playerIntials: playerIntials.value.trim(),
+    playerScore: playerScore.value.trim(),
+}
+function renderMessage() {
+    var initials = JSON.parse(localStorage.getItem("playerScore"));
+    if (initials !== null){
+        document.querySelector('.scoreboard').appendChild('span').textcontent = playerInfo
+    }
+}
 
