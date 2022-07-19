@@ -1,5 +1,14 @@
 // __________Global Variables__________
 
+// To stop error message on index and leaderboard html
+// $(document).ready(function(){
+//     $("button").click(function(){
+//         $("p").slideToggle();
+//     });
+// });
+
+
+
 // questions bank
 var arrayOfQuestions = [
     {
@@ -228,21 +237,27 @@ buttonD.addEventListener('click', nextQuestion);
 function endGame() {
     confirm('Game Over! Thanks for playing! If you would like to save your score press OK');
     location.href = 'leaderboard.html';
-    localStorage.setItem('UserScore', playerScore);
+    localStorage.setItem('userScore', playerScore);
     //need to pass variable for score to leaderboard page
 
 }
-//need to pass this to leaderboard html
-// var playerScore = 0; 
+
+document.getElementById('submit-initials').addEventListener('click', function(event){
+    event.preventDefault();
+    console.log('clicked')
+});
 
 var playerInfo = {
     playerIntials: playerIntials.value.trim(),
     playerScore: playerScore.value.trim(),
 }
+
 function renderMessage() {
-    var initials = JSON.parse(localStorage.getItem("playerScore"));
+    var initials = JSON.parse(localStorage.getItem("userName"));
     if (initials !== null){
         document.querySelector('.scoreboard').appendChild('span').textcontent = playerInfo
     }
 }
 
+//Resets the Leaderboard
+var clearStorage = document.getElementById("home-btn").addEventListener("click", localStorage.clear());
