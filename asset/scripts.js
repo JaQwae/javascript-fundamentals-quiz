@@ -183,7 +183,6 @@ displayQuestions()
 var score = document.getElementById('score-count')
 //keeps track of the score
 var playerScore = 0; 
-
 //adds points to the score in HUD
 function scoreTracker(event) {
     playerScore = playerScore += 5;
@@ -191,11 +190,15 @@ function scoreTracker(event) {
     console.log(playerScore)
 }
 
+
+
 //subtracts time off time left in HUD
 function timeReduction(){
     timeLeft = timeLeft - 5;
     timeRemaining.textContent = timeLeft;
 }
+
+
 
 //cycles through the questions
 function nextQuestion (event) {
@@ -217,6 +220,8 @@ function nextQuestion (event) {
     }
 }
 
+
+
 // Allow the A button to be clicked
 var buttonA = document.querySelector('.btnA');
 buttonA.addEventListener('click', nextQuestion);
@@ -229,10 +234,11 @@ buttonB.addEventListener('click', nextQuestion);
 var buttonC = document.querySelector('.btnC');
 buttonC.addEventListener('click', nextQuestion);
 
-
 // Allow the D button to be clicked
 var buttonD = document.querySelector('.btnD');
 buttonD.addEventListener('click', nextQuestion);
+
+
 
 function endGame() {
     confirm('Game Over! Thanks for playing! If you would like to save your score press OK');
@@ -242,6 +248,8 @@ function endGame() {
 
 }
 
+
+//Displaying Leaderboard
 document.getElementById('submit-initials').addEventListener('click', function(event){
     event.preventDefault();
     console.log('clicked')
@@ -258,6 +266,8 @@ function renderMessage() {
         document.querySelector('.scoreboard').appendChild('span').textcontent = playerInfo
     }
 }
+
+let scoreTotal = localStorage.getItem('UserScore');
 
 //Resets the Leaderboard
 var clearStorage = document.getElementById("home-btn").addEventListener("click", localStorage.clear());
