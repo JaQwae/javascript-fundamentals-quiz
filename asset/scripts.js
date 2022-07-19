@@ -104,7 +104,7 @@ var arrayOfQuestions = [
             'All of the above',
         ],
 
-        correctAnswer: 'B'
+        correctAnswer: 'Both conditions need to be true'
     },
     {
         question: "When using the || assignment operator, what needs to be true for the conditional statement to evaluate to true?",
@@ -116,7 +116,7 @@ var arrayOfQuestions = [
             'All of the above',
         ],
 
-        correctAnswer: 'D'
+        correctAnswer: 'All of the above'
     },
     {
         question: "What is an array?",
@@ -128,7 +128,7 @@ var arrayOfQuestions = [
             'None of the above',
         ],
 
-        correctAnswer: 'A'
+        correctAnswer: 'An ordered list of values'
     },
 ]
 
@@ -247,27 +247,3 @@ function endGame() {
     //need to pass variable for score to leaderboard page
 
 }
-
-
-//Displaying Leaderboard
-document.getElementById('submit-initials').addEventListener('click', function(event){
-    event.preventDefault();
-    console.log('clicked')
-});
-
-var playerInfo = {
-    playerIntials: playerIntials.value.trim(),
-    playerScore: playerScore.value.trim(),
-}
-
-function renderMessage() {
-    var initials = JSON.parse(localStorage.getItem("userName"));
-    if (initials !== null){
-        document.querySelector('.scoreboard').appendChild('span').textcontent = playerInfo
-    }
-}
-
-let scoreTotal = localStorage.getItem('UserScore');
-
-//Resets the Leaderboard
-var clearStorage = document.getElementById("home-btn").addEventListener("click", localStorage.clear());
