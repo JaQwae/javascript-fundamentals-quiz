@@ -21,9 +21,12 @@ I've included the features below using:
 
 What's to come:
 
-- Increasing the number of question in quiz 
-- Randomize the order of question each time the quiz is taken
-- Potentially condense quiz into one html element
+- Increasing the number of questions in the quiz.
+- Randomizing the order of question each time the quiz is taken.
+-A leaderboard that holds all of the players scores no matter what button is click.
+-The answer choice will flash green if question is right, and red if question is wrong.
+-A user interface that is more compact and mobile friendly.
+- Potentially condensing the quiz into one html element.
 
   
 
@@ -31,7 +34,7 @@ What's to come:
 
 ![Javascript Homepage](./Images/javascriptQuizHomepage.png);
 ![Javascript Gamepage](./Images/javascriptQuizGamepage.png);
-  
+<!-- update once leaderboard screen is fixed with css -->
   
 
 ## Credits

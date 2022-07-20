@@ -1,14 +1,3 @@
-// __________Global Variables__________
-
-// To stop error message on index and leaderboard html
-// $(document).ready(function(){
-//     $("button").click(function(){
-//         $("p").slideToggle();
-//     });
-// });
-
-
-
 // questions bank
 var arrayOfQuestions = [
     {
@@ -147,8 +136,8 @@ function timer() {
             //once time hits 0
             else{
                 timeRemaining.textContent = '';
-                clearInterval(timeInterval);
                 endGame(); //displays ending message
+                clearInterval(timeInterval);
             }
         }, 1000);
 }   
@@ -215,8 +204,8 @@ function nextQuestion (event) {
             num++; 
             displayQuestions();
             }
-    if (num + 1 > arrayOfQuestions.length) {
-        endGame()
+    if (num >= arrayOfQuestions.length) {
+        endGame();
     }
 }
 
@@ -243,7 +232,16 @@ buttonD.addEventListener('click', nextQuestion);
 function endGame() {
     confirm('Game Over! Thanks for playing! If you would like to save your score press OK');
     location.href = 'leaderboard.html';
-    localStorage.setItem('userScore', playerScore);
+    localStorage.setItem(playerInfo.playerIntials, playerScore);
     //need to pass variable for score to leaderboard page
 
 }
+
+
+
+//make mobile responsive
+    //add everything in flexbox
+    //media queries
+//in the spacing on start page replace margin with an animation of someone typing
+//favicon is something related to js
+// different color flash for right and wrong answers

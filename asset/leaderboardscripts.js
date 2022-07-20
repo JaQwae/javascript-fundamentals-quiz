@@ -1,7 +1,6 @@
 //Displaying Leaderboard
-
-let scoreTotal = localStorage.getItem('userScore');
-
+let scoreTotal = JSON.parse(localStorage.getItem('userScore'));
+console.log('log: scoreTotal ', scoreTotal);
 document.getElementById('submit-initials').addEventListener('click', function(event){
     
     let initialsInput = document.querySelector("#fname");
@@ -12,18 +11,23 @@ document.getElementById('submit-initials').addEventListener('click', function(ev
         playerScore: scoreTotal,
     };
     console.log(playerInfo);
+    localStorage.setItem("userName", JSON.stringify(playerInfo))
+    renderMessage();
 });
 
 
 
 function renderMessage() {
     var initials = JSON.parse(localStorage.getItem("userName"));
-    if (initials !== null){
-        document.querySelector('.scoreboard').appendChild('span').textcontent = playerInfo
+    console.log('log: initials ', initials);
+    if (initials){
+        var span = document.createElement("span");
+        document.querySelector('.scoreboard').appendChild(span).innerHTML = `${initials.playerScore}  ${initials.playerIntials}`;
+        
     }
 }
 
 
 
 //Resets the Leaderboard
-var clearStorage = document.getElementById("home-btn").addEventListener("click", localStorage.clear());
+var clearStorage = document.getElementById("reset-btn").addEventListener("click", localStorage.clear());
